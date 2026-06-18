@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Setup wizard — Flask SaaS Starter</title>
+  <meta name="description" content="Configure a fresh clone of the Flask SaaS Starter with the starter init wizard.">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="../"><span class="dot"></span> Flask SaaS Starter</a>
+      <div class="nav-links">
+        <a href="./">Docs</a>
+        <a href="../#pricing">Buy</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap doc" style="padding-top: 32px;">
+    <h1>Setup wizard</h1>
+    <p><code>starter init</code> turns a fresh clone into a configured app. It's interactive and safe
+    to run more than once.</p>
+    <pre><code>uv run flask --app wsgi:app starter init</code></pre>
+
+    <h2>What it asks</h2>
+    <ul>
+      <li><strong>Core</strong> — environment, app URL, database URL, superadmin IDs. It offers to
+      generate strong <code>SECRET_KEY</code> and <code>ENCRYPTION_KEY</code> values for you.</li>
+      <li><strong>Stripe billing</strong> — off by default; collects keys and plan price IDs if enabled.</li>
+      <li><strong>Email (Resend)</strong> — off by default; collects API key and from-address.</li>
+      <li><strong>Storage</strong> — <code>local</code> or <code>s3</code> (with S3/R2 credentials).</li>
+      <li><strong>Brand</strong> — product name, tagline, colours, and logo paths.</li>
+    </ul>
+
+    <h2>What it writes</h2>
+    <ul>
+      <li><code>.env</code> — environment variables (existing keys preserved; backed up first)</li>
+      <li><code>app/brand/brand.json</code> — your starter brand defaults</li>
+      <li><code>instance/starter.json</code> — non-secret setup metadata</li>
+    </ul>
+
+    <p class="callout">Secrets you enter or that are generated are never printed back, and an existing
+    <code>.env</code> is backed up before any change. Both files are git-ignored.</p>
+
+    <h2>After running</h2>
+    <pre><code>uv run flask --app wsgi:app db upgrade</code></pre>
+
+    <p style="margin-top:32px;"><a href="./">&larr; Back to docs</a></p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> Flask SaaS Starter</div>
+      <div><a href="../">Home</a> · <a href="../#pricing">Pricing</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

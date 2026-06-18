@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flask SaaS Starter — Launch your SaaS faster</title>
+  <meta name="description" content="A production-oriented, multi-tenant Flask SaaS starter kit: auth, workspaces, Stripe billing, entitlements, storage, branding, and one-click Render deploy.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="/"><span class="dot"></span> Flask SaaS Starter</a>
+      <div class="nav-links">
+        <a href="#features" class="hide-sm">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="docs/">Docs</a>
+        <a href="#faq" class="hide-sm">FAQ</a>
+        <a href="#pricing">Buy</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero wrap">
+      <h1>Launch your SaaS faster.</h1>
+      <p class="lead">
+        A production-oriented, multi-tenant <strong>Flask</strong> SaaS starter. Clone it,
+        run the setup wizard, deploy to Render — then build your actual feature instead of
+        rebuilding auth, billing, and tenancy.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#pricing">Get the starter</a>
+        <a class="btn btn-secondary" href="docs/">Read the docs</a>
+      </div>
+      <p class="note">Python / Flask · multi-tenant · Stripe billing · one-click Render deploy</p>
+    </section>
+
+    <!-- Pain -->
+    <section class="wrap">
+      <p class="eyebrow">The problem</p>
+      <h2 class="section-title">Every SaaS starts with the same months of plumbing</h2>
+      <p class="section-sub">Before you write a single line of your product, you need all of this — done properly.</p>
+      <ul class="pain">
+        <li><strong>Authentication</strong> — registration, invitations, password reset, roles.</li>
+        <li><strong>Multi-tenancy</strong> — workspace isolation that doesn't leak data between customers.</li>
+        <li><strong>Billing</strong> — Stripe checkout, webhooks, plans, and entitlement limits.</li>
+        <li><strong>File uploads</strong> — validation, secure serving, and S3/R2 storage.</li>
+        <li><strong>Deployment</strong> — production config, migrations, health checks, secrets.</li>
+        <li><strong>Operations</strong> — superadmin tooling, audit trails, and tests you can trust.</li>
+      </ul>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="wrap">
+      <p class="eyebrow">What's included</p>
+      <h2 class="section-title">A complete SaaS chassis, in Flask</h2>
+      <p class="section-sub">Everything below is already implemented, tested, and documented.</p>
+      <div class="grid grid-3">
+        <div class="card"><h3>Workspaces &amp; tenancy</h3><p>Workspace-based isolation with optional group scoping, enforced workspace-first on every query.</p></div>
+        <div class="card"><h3>Auth &amp; roles</h3><p>Registration, invitations, password reset, and role-based access out of the box.</p></div>
+        <div class="card"><h3>Stripe billing</h3><p>Checkout, webhooks, plan entitlements, resource limits, and billing snapshots.</p></div>
+        <div class="card"><h3>Storage &amp; uploads</h3><p>Local or S3/R2-compatible storage with upload validation and secure serving.</p></div>
+        <div class="card"><h3>White-label branding</h3><p>Centralized starter brand plus per-workspace white-label theming for your customers.</p></div>
+        <div class="card"><h3>Superadmin &amp; audit</h3><p>Protected operator routes, impersonation, and audit events.</p></div>
+        <div class="card"><h3>Setup wizard &amp; doctor</h3><p><code>starter init</code> configures a fresh clone; <code>starter doctor</code> preflights production.</p></div>
+        <div class="card"><h3>Render deploy</h3><p>One-click blueprint with managed Postgres, migrations, and a health check.</p></div>
+        <div class="card"><h3>Tested</h3><p>Solid Python test coverage across tenancy, entitlements, billing, and storage.</p></div>
+      </div>
+    </section>
+
+    <!-- Setup flow -->
+    <section class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2 class="section-title">From clone to live in four steps</h2>
+      <div class="steps">
+        <div class="step"><h3>Clone</h3><p>Get the source via your private repo invite or a versioned release.</p></div>
+        <div class="step"><h3>Configure</h3><p>Run <code>starter init</code> — it writes <code>.env</code>, generates secrets, and sets your brand.</p></div>
+        <div class="step"><h3>Deploy</h3><p>Click <strong>Deploy to Render</strong>; it provisions the app and database.</p></div>
+        <div class="step"><h3>Build</h3><p>Replace the demo resource with your own feature and ship.</p></div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="wrap">
+      <p class="eyebrow">Pricing</p>
+      <h2 class="section-title">One-time purchase. Build unlimited products.</h2>
+      <p class="section-sub">Use it to build your own commercial products. You may not resell the starter itself.</p>
+      <div class="pricing">
+        <div class="tier">
+          <div class="name">Solo</div>
+          <div class="price">£99</div>
+          <ul>
+            <li>One developer</li>
+            <li>Full source code</li>
+            <li>All features &amp; docs</li>
+            <li>Updates for 1 year</li>
+          </ul>
+          <!-- TODO(Phase 7): replace # with the Lemon Squeezy / Gumroad checkout URL -->
+          <a class="btn btn-secondary" href="#">Buy Solo</a>
+        </div>
+        <div class="tier featured">
+          <div class="name">Team</div>
+          <div class="price">£199</div>
+          <ul>
+            <li>Up to 5 developers</li>
+            <li>One company / organization</li>
+            <li>Full source code &amp; docs</li>
+            <li>Updates for 1 year</li>
+          </ul>
+          <!-- TODO(Phase 7): replace # with the Lemon Squeezy / Gumroad checkout URL -->
+          <a class="btn btn-primary" href="#">Buy Team</a>
+        </div>
+        <div class="tier">
+          <div class="name">Agency</div>
+          <div class="price">£399</div>
+          <ul>
+            <li>Unlimited developers</li>
+            <li>Use across client projects</li>
+            <li>Full source code &amp; docs</li>
+            <li>Updates for 1 year</li>
+          </ul>
+          <!-- TODO(Phase 7): replace # with the Lemon Squeezy / Gumroad checkout URL -->
+          <a class="btn btn-secondary" href="#">Buy Agency</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="section-title">Questions</h2>
+      <div class="faq">
+        <details><summary>What exactly do I get?</summary><p>The full source code of a production-oriented Flask SaaS application — auth, multi-tenant workspaces, Stripe billing, entitlements, storage, branding, superadmin tooling, tests, a setup wizard, a doctor command, and a Render deployment blueprint — plus the documentation.</p></details>
+        <details><summary>Can I build commercial products with it?</summary><p>Yes. Build and sell as many of your own products as you like. You don't need to credit or disclose the starter in what you ship.</p></details>
+        <details><summary>Can I resell or share the starter?</summary><p>No. You may use and modify it, but you can't resell, redistribute, or republish the starter itself. See the license summary below.</p></details>
+        <details><summary>What's the tech stack?</summary><p>Flask 3, SQLAlchemy, Flask-Migrate, PostgreSQL (SQLite for local dev), Stripe, Resend for email, and S3/R2-compatible storage. Deploys to Render or any standard VPS.</p></details>
+        <details><summary>How do updates work?</summary><p>Bug fixes and improvements are published as versioned releases. Each tier includes one year of updates.</p></details>
+        <details><summary>Do you offer refunds?</summary><p>Because this is downloadable source code, sales are generally final — but reach out if something isn't as described.</p></details>
+      </div>
+    </section>
+
+    <!-- License summary -->
+    <section class="wrap">
+      <p class="eyebrow">License</p>
+      <h2 class="section-title">Simple commercial license</h2>
+      <div class="callout">
+        <strong>You may</strong> use and modify the code to build your own commercial or non-commercial
+        products, deploy unlimited products, and keep any version you've received.
+        <strong>You may not</strong> resell, redistribute, sublicense, or republish the starter itself.
+        Built products need no attribution. Full terms ship with the source.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> Flask SaaS Starter</div>
+      <div>
+        <a href="docs/">Docs</a> ·
+        <a href="#pricing">Pricing</a> ·
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

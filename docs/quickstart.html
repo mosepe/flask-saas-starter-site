@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quickstart — Flask SaaS Starter</title>
+  <meta name="description" content="Get the Flask SaaS Starter running locally in a few commands.">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="../"><span class="dot"></span> Flask SaaS Starter</a>
+      <div class="nav-links">
+        <a href="./">Docs</a>
+        <a href="../#pricing">Buy</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap doc" style="padding-top: 32px;">
+    <h1>Quickstart</h1>
+    <p>Take a fresh checkout to a migrated local app with the test suite passing.</p>
+
+    <h2>1. Install dependencies</h2>
+    <pre><code>uv sync --extra test</code></pre>
+
+    <h2>2. Configure</h2>
+    <p>Run the setup wizard (recommended) — see <a href="setup-wizard.html">Setup wizard</a>:</p>
+    <pre><code>uv run flask --app wsgi:app starter init</code></pre>
+    <p>Or copy <code>.env.example</code> to <code>.env</code> and fill in the core values by hand.</p>
+
+    <h2>3. Apply migrations</h2>
+    <pre><code>uv run flask --app wsgi:app db upgrade</code></pre>
+
+    <h2>4. Run the app</h2>
+    <pre><code>uv run flask --app wsgi:app run</code></pre>
+    <p>Visit <code>http://localhost:5000</code> and register a workspace.</p>
+
+    <h2>5. Run the tests</h2>
+    <pre><code>uv run pytest -q</code></pre>
+
+    <p class="callout">Before deploying, run <code>uv run flask --app wsgi:app starter doctor</code> to
+    catch any missing production configuration.</p>
+
+    <p style="margin-top:32px;"><a href="./">&larr; Back to docs</a></p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> Flask SaaS Starter</div>
+      <div><a href="../">Home</a> · <a href="../#pricing">Pricing</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

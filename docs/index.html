@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docs — Flask SaaS Starter</title>
+  <meta name="description" content="Documentation for the Flask SaaS Starter: quickstart, setup wizard, deployment, branding, billing, and storage.">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="../"><span class="dot"></span> Flask SaaS Starter</a>
+      <div class="nav-links">
+        <a href="../#features" class="hide-sm">Features</a>
+        <a href="../#pricing">Pricing</a>
+        <a href="./">Docs</a>
+        <a href="../#pricing">Buy</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap" style="padding-top: 32px;">
+    <p class="eyebrow">Documentation</p>
+    <h1 class="section-title">Docs</h1>
+    <p class="section-sub">A preview of the documentation. The complete docs ship with the source.</p>
+
+    <ul class="doclist">
+      <li><a href="quickstart.html">Quickstart <span>Fresh checkout to a running local app.</span></a></li>
+      <li><a href="setup-wizard.html">Setup wizard <span>Configure a fresh clone with <code>starter init</code>.</span></a></li>
+      <li><a href="../#features">Features <span>What's included in the starter.</span></a></li>
+      <li><a href="../#pricing">Pricing &amp; license <span>Tiers and what you can build.</span></a></li>
+    </ul>
+
+    <h2 class="section-title" style="font-size:22px; margin-top:48px;">Ships with the source</h2>
+    <p class="section-sub">The purchased repo includes deeper guides:</p>
+    <ul class="doclist">
+      <li><a href="../#pricing">Deploy to Render <span>One-click blueprint and production setup.</span></a></li>
+      <li><a href="../#pricing">Doctor <span>Production-readiness preflight checks.</span></a></li>
+      <li><a href="../#pricing">Custom branding <span>Starter brand vs per-workspace white-label.</span></a></li>
+      <li><a href="../#pricing">Stripe billing <span>Products, prices, webhooks, entitlements.</span></a></li>
+      <li><a href="../#pricing">Storage <span>Local and S3/R2-compatible storage.</span></a></li>
+      <li><a href="../#pricing">Build your first feature <span>Add a tenant-owned resource safely.</span></a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> Flask SaaS Starter</div>
+      <div><a href="../">Home</a> · <a href="../#pricing">Pricing</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
