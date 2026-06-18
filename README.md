@@ -36,11 +36,19 @@ python -m http.server 8000
 Add a `CNAME` file containing your domain (e.g. `flaskstarter.dev`), set it under
 **Settings → Pages → Custom domain**, and point your DNS at GitHub Pages.
 
+## Decisions (locked)
+
+- **Payment:** Lemon Squeezy (Merchant of Record — handles global VAT/sales tax).
+- **Delivery:** private GitHub repo access (manual invites to launch; automate via a Lemon
+  Squeezy webhook later).
+- **Pricing:** two tiers — Personal £129, Team £299 (one-time, 1 year of updates).
+- **Name:** undecided — needs a genuinely *invented*, ownable word (real/vessel words like
+  Cask, Plinth, Caskade, Phial are all taken in dev tooling). Placeholder is "Flask SaaS Starter".
+
 ## Before launch — TODO
 
-- [ ] Set the real product name throughout (currently the working name "Flask SaaS Starter").
-- [ ] Replace the `#` buy links in `index.html` with the Lemon Squeezy / Gumroad checkout URLs
-      (Phase 7).
+- [ ] Decide the product name (invented word; verify .com/.dev + GitHub org), then global-swap it.
+- [ ] Create the Lemon Squeezy account + two products (Personal/Team) and paste the checkout URLs
+      over the `#` buy links in `index.html`.
 - [ ] Add screenshots and/or a short demo video to the landing page.
-- [ ] Confirm pricing (currently Solo £99 / Team £199 / Agency £399).
-- [ ] Point the README "Deploy to Render" expectations and docs links at the live product repo.
+- [ ] Set up the private product repo + a buyer-invite process (manual to start).
