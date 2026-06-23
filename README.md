@@ -22,8 +22,10 @@ src/
 public/                 copied to the build root as-is (NOT processed by Vite)
   docs/                 static docs pages (index, quickstart, setup-wizard)
   assets/styles.css     stylesheet for the static docs pages
+  favicon.svg
+  CNAME                 custom domain (saasling.dev)
   .nojekyll
-vite.config.js          base: '/flask-saas-starter-site/' for the Pages subpath
+vite.config.js          base: '/' (served at the saasling.dev apex)
 .github/workflows/deploy.yml   build + deploy to Pages
 ```
 
@@ -34,7 +36,7 @@ vite.config.js          base: '/flask-saas-starter-site/' for the Pages subpath
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173/flask-saas-starter-site/
+npm run dev      # http://localhost:5173/
 npm run build    # outputs to dist/
 npm run preview  # serve the production build locally
 ```
@@ -48,13 +50,14 @@ workflow builds and publishes.
 deployment → Source** and set it to **GitHub Actions** (it was previously "Deploy from a
 branch"). After that, every push to `main` ships.
 
-Live at `https://mosepe.github.io/flask-saas-starter-site/`.
+Live at **https://saasling.dev**.
 
-### Custom domain (optional)
+### Custom domain
 
-Add the domain to `public/CNAME`, set it under **Settings → Pages → Custom domain**, and
-point DNS at GitHub Pages. With an apex domain you can drop the `base` in `vite.config.js`
-back to `'/'`.
+Configured: `public/CNAME` holds `saasling.dev`; DNS is on Cloudflare (apex `CNAME @ →
+mosepe.github.io` + `www`, both DNS-only/grey-cloud, relying on CNAME flattening); Vite
+`base` is `'/'`. After the first deploy, enable **Settings → Pages → Enforce HTTPS** once
+GitHub has issued the certificate.
 
 ## Decisions (locked)
 
