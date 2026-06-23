@@ -1,40 +1,60 @@
 # Flask SaaS Starter — marketing & docs site
 
-The public, static marketing and documentation site for the Flask SaaS Starter. Plain HTML/CSS,
-no build step — deploys to GitHub Pages directly. Kept in its own **public** repo so the product
-source can stay private.
+The public marketing and documentation site for the Flask SaaS Starter. Built with
+**Vite + React** in a terminal/engineer aesthetic, statically exported and deployed to
+**GitHub Pages** via GitHub Actions. Kept in its own **public** repo so the product source
+can stay private.
+
+## Stack
+
+- **Vite + React** — single-page landing, built to static HTML/CSS/JS in `dist/`.
+- **JetBrains Mono** (self-hosted via `@fontsource`) — the monospace terminal look.
+- **GitHub Actions** → GitHub Pages — builds on every push to `main` and publishes `dist/`.
 
 ## Structure
 
 ```text
-index.html          Landing / sales page
-assets/styles.css   Shared styles
-docs/index.html     Docs hub
-docs/quickstart.html
-docs/setup-wizard.html
-.nojekyll           Serve files as-is (skip Jekyll processing)
+index.html              Vite entry (mounts the React app)
+src/
+  main.jsx              React entry
+  App.jsx               the whole landing page (content lives in arrays up top)
+  styles.css            terminal/engineer design system + tokens
+public/                 copied to the build root as-is (NOT processed by Vite)
+  docs/                 static docs pages (index, quickstart, setup-wizard)
+  assets/styles.css     stylesheet for the static docs pages
+  .nojekyll
+vite.config.js          base: '/flask-saas-starter-site/' for the Pages subpath
+.github/workflows/deploy.yml   build + deploy to Pages
 ```
 
-## Run locally
+> The `docs/` pages are still plain static HTML in `public/`. They keep their own
+> stylesheet and relative links, so Vite copies them through untouched.
 
-It's static — open `index.html` in a browser, or serve the folder:
+## Develop
 
 ```bash
-python -m http.server 8000
-# then visit http://localhost:8000
+npm install
+npm run dev      # http://localhost:5173/flask-saas-starter-site/
+npm run build    # outputs to dist/
+npm run preview  # serve the production build locally
 ```
 
-## Publish to GitHub Pages
+## Deploy
 
-1. Create a **public** repo (e.g. `flask-saas-starter-site`) and push this folder to it.
-2. In the repo: **Settings → Pages → Build and deployment → Deploy from a branch**, branch
-   `main`, folder `/ (root)`. Save.
-3. The site goes live at `https://<user>.github.io/<repo>/` within a minute or two.
+Deployment is automatic: **push to `main`** and the `Deploy site to GitHub Pages`
+workflow builds and publishes.
+
+**One-time setup (required):** in the repo, go to **Settings → Pages → Build and
+deployment → Source** and set it to **GitHub Actions** (it was previously "Deploy from a
+branch"). After that, every push to `main` ships.
+
+Live at `https://mosepe.github.io/flask-saas-starter-site/`.
 
 ### Custom domain (optional)
 
-Add a `CNAME` file containing your domain (e.g. `flaskstarter.dev`), set it under
-**Settings → Pages → Custom domain**, and point your DNS at GitHub Pages.
+Add the domain to `public/CNAME`, set it under **Settings → Pages → Custom domain**, and
+point DNS at GitHub Pages. With an apex domain you can drop the `base` in `vite.config.js`
+back to `'/'`.
 
 ## Decisions (locked)
 
@@ -42,13 +62,12 @@ Add a `CNAME` file containing your domain (e.g. `flaskstarter.dev`), set it unde
 - **Delivery:** private GitHub repo access (manual invites to launch; automate via a Lemon
   Squeezy webhook later).
 - **Pricing:** two tiers — Personal £129, Team £299 (one-time, 1 year of updates).
-- **Name:** undecided — needs a genuinely *invented*, ownable word (real/vessel words like
-  Cask, Plinth, Caskade, Phial are all taken in dev tooling). Placeholder is "Flask SaaS Starter".
+- **Name:** undecided — placeholder is "Flask SaaS Starter".
 
 ## Before launch — TODO
 
-- [ ] Decide the product name (invented word; verify .com/.dev + GitHub org), then global-swap it.
-- [ ] Create the Lemon Squeezy account + two products (Personal/Team) and paste the checkout URLs
-      over the `#` buy links in `index.html`.
-- [ ] Add screenshots and/or a short demo video to the landing page.
+- [ ] Decide the product name (invented word; verify .com/.dev + GitHub org), then global-swap.
+- [ ] Paste the two Lemon Squeezy checkout URLs over the `#` placeholders in `src/App.jsx`
+      (the `PLANS` array — look for the `TODO` comments).
+- [ ] Add screenshots and/or a short demo to the landing page.
 - [ ] Set up the private product repo + a buyer-invite process (manual to start).
