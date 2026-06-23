@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react'
 // --- content -----------------------------------------------------------------
 
 const BOOT = [
-  ['ok', 'auth', 'registration · invites · password reset · roles'],
+  ['ok', 'auth', 'registration, invites, password reset, roles'],
   ['ok', 'tenancy', 'workspace isolation, enforced workspace-first'],
-  ['ok', 'billing', 'Stripe checkout · webhooks · entitlements'],
-  ['ok', 'storage', 'local or S3/R2 · upload validation'],
+  ['ok', 'billing', 'Stripe checkout, webhooks, entitlements'],
+  ['ok', 'storage', 'local or S3/R2, upload validation'],
   ['ok', 'brand', 'starter brand + per-workspace white-label'],
   ['ok', 'deploy', 'one-click Render blueprint + Postgres'],
 ]
@@ -34,18 +34,18 @@ const MODULES = [
 
 const STEPS = [
   ['clone', 'Get the source after your private GitHub repo invite lands.'],
-  ['configure', 'Run starter init — it writes .env, generates secrets, sets your brand.'],
+  ['configure', 'Run starter init. It writes .env, generates secrets, and sets your brand.'],
   ['deploy', 'Click Deploy to Render; it provisions the app and the database.'],
   ['build', 'Replace the demo resource with your own feature and ship.'],
 ]
 
 const FAQ = [
-  ['What exactly do I get?', "The full source of a production-oriented Flask SaaS app — auth, multi-tenant workspaces, Stripe billing, entitlements, storage, branding, superadmin tooling, tests, a setup wizard, a doctor command, and a Render deployment blueprint — plus the docs."],
+  ['What exactly do I get?', 'The full source of a production-oriented Flask SaaS app. It includes auth, multi-tenant workspaces, Stripe billing, entitlements, storage, branding, superadmin tooling, tests, a setup wizard, a doctor command, a Render deployment blueprint, and the docs.'],
   ['Can I build commercial products with it?', "Yes. Build and sell as many of your own products as you like. You don't need to credit or disclose the starter in what you ship."],
   ['Can I resell or share the starter?', "No. You may use and modify it, but you can't resell, redistribute, or republish the starter itself."],
   ["What's the tech stack?", 'Flask 3, SQLAlchemy, Flask-Migrate, PostgreSQL (SQLite for local dev), Stripe, Resend for email, and S3/R2-compatible storage. Deploys to Render or any standard VPS.'],
-  ['How is it delivered, and how do updates work?', 'You get access to a private GitHub repo — during launch, invites are processed manually after purchase. Clone it and git pull to pull updates. Improvements ship as versioned releases; each tier includes one year of updates.'],
-  ['Do you offer refunds?', "Because this is downloadable source code, sales are generally final — but reach out if something isn't as described."],
+  ['How is it delivered, and how do updates work?', 'You get access to a private GitHub repo. During launch, invites are processed manually after purchase. Clone it and use git pull to get updates. Improvements ship as versioned releases; each tier includes one year of updates.'],
+  ['Do you offer refunds?', "Because this is downloadable source code, sales are generally final. Reach out if something isn't as described."],
 ]
 
 const PLANS = [
@@ -61,7 +61,7 @@ const PLANS = [
     price: '£299',
     featured: true,
     href: 'https://saasling.lemonsqueezy.com/checkout/buy/dcf204cf-239a-475a-aaaa-96710c784370?embed=1',
-    perks: ['a whole company — unlimited devs', 'full source code & docs', 'build unlimited products', 'private GitHub repo access', '1 year of updates'],
+    perks: ['a whole company, unlimited devs', 'full source code & docs', 'build unlimited products', 'private GitHub repo access', '1 year of updates'],
   },
 ]
 
@@ -92,7 +92,7 @@ function CopyCmd({ text }) {
       await navigator.clipboard.writeText(text)
       setCopied(true)
       setTimeout(() => setCopied(false), 1400)
-    } catch { /* clipboard blocked — no-op */ }
+    } catch { /* clipboard blocked, no-op */ }
   }
   return (
     <button className="copycmd" onClick={copy} title="Copy">
@@ -119,7 +119,7 @@ function Win({ title, children, className = '' }) {
 export default function App() {
   const year = new Date().getFullYear()
   useEffect(() => {
-    // lemon.js auto-inits on load, but the buy buttons render with React —
+    // lemon.js auto-inits on load, but the buy buttons render with React.
     // re-bind the overlay to them after mount. No-op if the script didn't load
     // (the buttons then fall back to a normal link to the hosted checkout).
     window.createLemonSqueezy?.()
@@ -146,12 +146,12 @@ export default function App() {
         {/* hero */}
         <section className="hero wrap">
           <div className="hero-copy">
-            <p className="kicker">// Python · Flask · multi-tenant · Stripe · Render</p>
+            <p className="kicker">// Python / Flask / multi-tenant / Stripe / Render</p>
             <h1>Ship the product,<br />not the plumbing.</h1>
             <p className="lead">
               A production-oriented, multi-tenant Flask SaaS starter. Clone it, run the
-              setup wizard, deploy to Render — then build your actual feature instead of
-              rebuilding auth, billing, and tenancy for the hundredth time.
+              setup wizard, and deploy to Render. Then build your actual feature instead
+              of rebuilding auth, billing, and tenancy again.
             </p>
             <div className="cta">
               <a className="btn btn-primary" href="#pricing">get the starter</a>
@@ -160,10 +160,10 @@ export default function App() {
             <CopyCmd text="git clone git@github.com:SaaSling/starter.git && cd starter && uv run flask --app wsgi:app starter init" />
           </div>
 
-          <Win title="bash — starter init" className="hero-win">
+          <Win title="bash: starter init" className="hero-win">
             <pre className="boot">
               <div className="boot-line"><Prompt>starter init</Prompt></div>
-              <div className="boot-line dim">provisioning chassis…</div>
+              <div className="boot-line dim">provisioning starter...</div>
               {BOOT.map(([, name, desc], i) => (
                 <div className="boot-line" style={{ '--i': i }} key={name}>
                   <span className="tick">✓</span>
@@ -172,7 +172,7 @@ export default function App() {
                 </div>
               ))}
               <div className="boot-line ready">
-                <span className="tick">✓</span> ready — now build your feature
+                <span className="tick">✓</span> ready: build your feature
                 <span className="cursor" />
               </div>
             </pre>
@@ -184,7 +184,7 @@ export default function App() {
           <SectionHead
             tag="the problem"
             title="Every SaaS starts with the same months of plumbing"
-            sub="Before you write a single line of your product, you need all of this — done properly."
+            sub="Before you write a single line of your product, you need all of this done properly."
           />
           <ul className="problems">
             {PROBLEMS.map(([k, v]) => (
@@ -201,7 +201,7 @@ export default function App() {
         <section id="modules" className="wrap">
           <SectionHead
             tag="modules"
-            title="A complete SaaS chassis, in Flask"
+            title="A complete Flask SaaS starter"
             sub="Everything below is already implemented, tested, and documented."
           />
           <div className="modgrid">
@@ -289,9 +289,9 @@ export default function App() {
 
       <footer>
         <div className="wrap foot">
-          <span><span className="sigil">$</span> © {year} saasling<span className="cursor" /></span>
+          <span><span className="sigil">$</span> © {year} SaaSling<span className="cursor" /></span>
           <span className="foot-links">
-            <a href="docs/">docs</a> · <a href="#pricing">pricing</a> · <a href="#faq">faq</a>
+            <a href="docs/">docs</a> / <a href="#pricing">pricing</a> / <a href="#faq">faq</a>
           </span>
         </div>
       </footer>

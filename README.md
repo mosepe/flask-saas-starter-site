@@ -1,15 +1,15 @@
-# Saasling — marketing & docs site
+# SaaSling - marketing & docs site
 
-The public marketing and documentation site for Saasling, a Flask SaaS starter. Built with
+The public marketing and documentation site for SaaSling, a Flask SaaS starter. Built with
 **Vite + React** in a terminal/engineer aesthetic, statically exported and deployed to
 **GitHub Pages** via GitHub Actions. Kept in its own **public** repo so the product source
 can stay private.
 
 ## Stack
 
-- **Vite + React** — single-page landing, built to static HTML/CSS/JS in `dist/`.
-- **JetBrains Mono** (self-hosted via `@fontsource`) — the monospace terminal look.
-- **GitHub Actions** → GitHub Pages — builds on every push to `main` and publishes `dist/`.
+- **Vite + React**: single-page landing, built to static HTML/CSS/JS in `dist/`.
+- **JetBrains Mono** (self-hosted via `@fontsource`): the monospace terminal look.
+- **GitHub Actions** -> GitHub Pages: builds on every push to `main` and publishes `dist/`.
 
 ## Structure
 
@@ -61,15 +61,15 @@ GitHub has issued the certificate.
 
 ## Decisions (locked)
 
-- **Payment:** Lemon Squeezy (Merchant of Record — handles global VAT/sales tax).
+- **Payment:** Lemon Squeezy (Merchant of Record, handles global VAT/sales tax).
 - **Delivery:** private GitHub repo access. During launch, buyer invites are processed manually;
   automate via a Lemon Squeezy webhook later.
-- **Pricing:** two tiers — Personal £129, Team £299 (one-time, 1 year of updates).
-- **Name:** Saasling — domain `saasling.dev`, GitHub org `saasling`, PyPI/npm `saasling`.
+- **Pricing:** two tiers: Personal £129, Team £299 (one-time, 1 year of updates).
+- **Name:** SaaSling. Domain `saasling.dev`, GitHub org `saasling`, PyPI/npm `saasling`.
 
-## Before launch — TODO
+## Before launch TODO
 
-- [x] Decide the product name → **Saasling** (saasling.dev).
+- [x] Decide the product name: **SaaSling** (saasling.dev).
 - [x] Wire the two Lemon Squeezy checkout URLs in `src/App.jsx`.
 - [x] Set up the private product repo + a manual buyer-invite process for launch.
 - [ ] Add screenshots and/or a short demo to the landing page.

@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Setup wizard — Saasling</title>
-  <meta name="description" content="Configure a fresh clone of Saasling with the starter init wizard.">
+  <title>Setup wizard - SaaSling</title>
+  <meta name="description" content="Configure a fresh clone of SaaSling with the starter init wizard.">
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
   <header>
     <nav class="nav">
-      <a class="brand" href="../"><span class="dot"></span> Saasling</a>
+      <a class="brand" href="../"><span class="dot"></span> SaaSling</a>
       <div class="nav-links">
         <a href="./">Docs</a>
         <a href="../#pricing">Buy</a>
@@ -26,19 +26,19 @@
 
     <h2>What it asks</h2>
     <ul>
-      <li><strong>Core</strong> — environment, app URL, database URL, superadmin IDs. It offers to
+      <li><strong>Core</strong>: environment, app URL, database URL, superadmin IDs. It offers to
       generate strong <code>SECRET_KEY</code> and <code>ENCRYPTION_KEY</code> values for you.</li>
-      <li><strong>Stripe billing</strong> — off by default; collects keys and plan price IDs if enabled.</li>
-      <li><strong>Email (Resend)</strong> — off by default; collects API key and from-address.</li>
-      <li><strong>Storage</strong> — <code>local</code> or <code>s3</code> (with S3/R2 credentials).</li>
-      <li><strong>Brand</strong> — product name, tagline, colours, and logo paths.</li>
+      <li><strong>Stripe billing</strong>: off by default; collects keys and plan price IDs if enabled.</li>
+      <li><strong>Email (Resend)</strong>: off by default; collects API key and from-address.</li>
+      <li><strong>Storage</strong>: <code>local</code> or <code>s3</code> (with S3/R2 credentials).</li>
+      <li><strong>Brand</strong>: product name, tagline, colours, and logo paths.</li>
     </ul>
 
     <h2>What it writes</h2>
     <ul>
-      <li><code>.env</code> — environment variables (existing keys preserved; backed up first)</li>
-      <li><code>app/brand/brand.json</code> — your starter brand defaults</li>
-      <li><code>instance/starter.json</code> — non-secret setup metadata</li>
+      <li><code>.env</code>: environment variables (existing keys preserved; backed up first)</li>
+      <li><code>app/brand/brand.json</code>: your starter brand defaults</li>
+      <li><code>instance/starter.json</code>: non-secret setup metadata</li>
     </ul>
 
     <p class="callout">Secrets you enter or that are generated are never printed back, and an existing
@@ -52,8 +52,8 @@
 
   <footer>
     <div class="wrap">
-      <div>© <span id="year"></span> Saasling</div>
-      <div><a href="../">Home</a> · <a href="../#pricing">Pricing</a></div>
+      <div>© <span id="year"></span> SaaSling</div>
+      <div><a href="../">Home</a> / <a href="../#pricing">Pricing</a></div>
     </div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
