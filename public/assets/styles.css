@@ -22,6 +22,7 @@ body {
   background: radial-gradient(1200px 600px at 50% -10%, #1f2937 0%, var(--accent) 55%, var(--bg) 100%);
   background-attachment: fixed;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a { color: var(--primary-hi); text-decoration: none; }
@@ -125,3 +126,46 @@ h1, h2, h3 { color: var(--white); letter-spacing: -0.02em; }
 /* Footer */
 footer { border-top: 1px solid var(--border); padding: 36px 0; color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+@media (max-width: 700px) {
+  .wrap { padding: 0 18px; }
+  .nav { padding: 16px 18px; gap: 16px; }
+  .nav .brand { font-size: 16px; flex: none; }
+  .nav-links { display: flex; align-items: center; gap: 14px; }
+  .nav-links a { margin-left: 0; font-size: 14px; }
+  .btn { display: block; width: 100%; text-align: center; padding: 12px 18px; }
+  section { padding: 48px 0; }
+  .hero { padding: 48px 0 28px; }
+  .hero h1 { font-size: 34px; line-height: 1.12; }
+  .hero p.lead { font-size: 17px; }
+  .hero .cta { display: grid; grid-template-columns: 1fr; width: 100%; }
+  .section-title { font-size: 26px; }
+  .section-sub { font-size: 16px; margin-bottom: 26px; }
+  .grid-3,
+  .grid-4,
+  .pain,
+  .steps,
+  .pricing,
+  .doclist { grid-template-columns: 1fr; }
+  .card,
+  .step,
+  .tier,
+  .doclist a,
+  .callout { border-radius: 10px; }
+  .doc { max-width: none; }
+  .doc h1 { font-size: 30px; }
+  .doc h2 { font-size: 20px; }
+  .doc pre { padding: 14px; }
+  .doc code,
+  .step code { overflow-wrap: anywhere; }
+  footer .wrap { display: grid; gap: 8px; }
+}
+
+@media (max-width: 420px) {
+  .wrap { padding: 0 14px; }
+  .nav { padding-left: 14px; padding-right: 14px; }
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 13px; }
+  .hero h1 { font-size: 30px; }
+  .tier .price { font-size: 34px; }
+}
