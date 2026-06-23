@@ -125,7 +125,7 @@ export default function App() {
       <header className="topbar">
         <nav className="nav wrap">
           <a className="brand" href="./">
-            <span className="brand-path">~/flask-saas-starter</span>
+            <span className="brand-path">~/saasling</span>
             <span className="caret" />
           </a>
           <div className="nav-links">
@@ -281,7 +281,7 @@ export default function App() {
 
       <footer>
         <div className="wrap foot">
-          <span><span className="sigil">$</span> © {year} flask-saas-starter<span className="cursor" /></span>
+          <span><span className="sigil">$</span> © {year} saasling<span className="cursor" /></span>
           <span className="foot-links">
             <a href="docs/">docs</a> · <a href="#pricing">pricing</a> · <a href="#faq">faq</a>
           </span>

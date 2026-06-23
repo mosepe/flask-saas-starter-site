@@ -1,6 +1,6 @@
-# Flask SaaS Starter — marketing & docs site
+# Saasling — marketing & docs site
 
-The public marketing and documentation site for the Flask SaaS Starter. Built with
+The public marketing and documentation site for Saasling, a Flask SaaS starter. Built with
 **Vite + React** in a terminal/engineer aesthetic, statically exported and deployed to
 **GitHub Pages** via GitHub Actions. Kept in its own **public** repo so the product source
 can stay private.
@@ -62,11 +62,11 @@ back to `'/'`.
 - **Delivery:** private GitHub repo access (manual invites to launch; automate via a Lemon
   Squeezy webhook later).
 - **Pricing:** two tiers — Personal £129, Team £299 (one-time, 1 year of updates).
-- **Name:** undecided — placeholder is "Flask SaaS Starter".
+- **Name:** Saasling — domain `saasling.dev`, GitHub org `saasling`, PyPI/npm `saasling`.
 
 ## Before launch — TODO
 
-- [ ] Decide the product name (invented word; verify .com/.dev + GitHub org), then global-swap.
+- [x] Decide the product name → **Saasling** (saasling.dev).
 - [ ] Paste the two Lemon Squeezy checkout URLs over the `#` placeholders in `src/App.jsx`
       (the `PLANS` array — look for the `TODO` comments).
 - [ ] Add screenshots and/or a short demo to the landing page.
