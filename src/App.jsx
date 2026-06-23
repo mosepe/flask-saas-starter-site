@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // --- content -----------------------------------------------------------------
 
@@ -53,16 +53,14 @@ const PLANS = [
     name: 'personal',
     price: '£129',
     featured: false,
-    // TODO: replace '#' with the Lemon Squeezy checkout URL for the Personal tier
-    href: '#',
+    href: 'https://saasling.lemonsqueezy.com/checkout/buy/173b0857-5729-4de7-b09b-568efc7d4d52?embed=1',
     perks: ['one developer', 'full source code & docs', 'build unlimited products', 'private GitHub repo access', '1 year of updates'],
   },
   {
     name: 'team',
     price: '£299',
     featured: true,
-    // TODO: replace '#' with the Lemon Squeezy checkout URL for the Team tier
-    href: '#',
+    href: 'https://saasling.lemonsqueezy.com/checkout/buy/dcf204cf-239a-475a-aaaa-96710c784370?embed=1',
     perks: ['a whole company — unlimited devs', 'full source code & docs', 'build unlimited products', 'private GitHub repo access', '1 year of updates'],
   },
 ]
@@ -120,6 +118,12 @@ function Win({ title, children, className = '' }) {
 
 export default function App() {
   const year = new Date().getFullYear()
+  useEffect(() => {
+    // lemon.js auto-inits on load, but the buy buttons render with React —
+    // re-bind the overlay to them after mount. No-op if the script didn't load
+    // (the buttons then fall back to a normal link to the hosted checkout).
+    window.createLemonSqueezy?.()
+  }, [])
   return (
     <>
       <header className="topbar">
@@ -244,7 +248,7 @@ export default function App() {
                     <li key={perk}><span className="tick">✓</span>{perk}</li>
                   ))}
                 </ul>
-                <a className={`btn ${p.featured ? 'btn-primary' : 'btn-ghost'}`} href={p.href}>
+                <a className={`btn lemonsqueezy-button ${p.featured ? 'btn-primary' : 'btn-ghost'}`} href={p.href}>
                   get {p.name}
                 </a>
               </Win>
