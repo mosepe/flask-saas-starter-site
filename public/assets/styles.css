@@ -20,7 +20,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: var(--text);
   background: radial-gradient(1200px 600px at 50% -10%, #1f2937 0%, var(--accent) 55%, var(--bg) 100%);
-  background-attachment: fixed;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -129,6 +128,8 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 
 @media (max-width: 700px) {
   .wrap { padding: 0 18px; }
+  html { scroll-behavior: auto; }
+  body { background: var(--bg); }
   .nav { padding: 16px 18px; gap: 16px; }
   .nav .brand { font-size: 16px; flex: none; }
   .nav-links { display: flex; align-items: center; gap: 14px; }

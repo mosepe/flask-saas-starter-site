@@ -57,6 +57,7 @@ a:hover { color: var(--primary); }
   position: sticky; top: 0; z-index: 20;
   background: rgba(10, 12, 16, 0.82);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 58px; }
@@ -163,6 +164,16 @@ section { padding: 74px 0; border-top: 1px solid transparent; }
 
 @media (max-width: 700px) {
   .wrap { padding: 0 18px; }
+  html { scroll-behavior: auto; }
+  body { background-image: none; }
+  .topbar {
+    background: rgba(10, 12, 16, 0.96);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .cursor,
+  .brand .caret,
+  .hero-win .boot-line[style] { animation: none; }
   section { padding: 52px 0; }
   .hero { padding-top: 42px; padding-bottom: 18px; }
   .kicker { font-size: 12.5px; margin-bottom: 14px; }
