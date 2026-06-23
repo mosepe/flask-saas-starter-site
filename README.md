@@ -62,15 +62,24 @@ GitHub has issued the certificate.
 ## Decisions (locked)
 
 - **Payment:** Lemon Squeezy (Merchant of Record — handles global VAT/sales tax).
-- **Delivery:** private GitHub repo access (manual invites to launch; automate via a Lemon
-  Squeezy webhook later).
+- **Delivery:** private GitHub repo access. During launch, buyer invites are processed manually;
+  automate via a Lemon Squeezy webhook later.
 - **Pricing:** two tiers — Personal £129, Team £299 (one-time, 1 year of updates).
 - **Name:** Saasling — domain `saasling.dev`, GitHub org `saasling`, PyPI/npm `saasling`.
 
 ## Before launch — TODO
 
 - [x] Decide the product name → **Saasling** (saasling.dev).
-- [ ] Paste the two Lemon Squeezy checkout URLs over the `#` placeholders in `src/App.jsx`
-      (the `PLANS` array — look for the `TODO` comments).
+- [x] Wire the two Lemon Squeezy checkout URLs in `src/App.jsx`.
+- [x] Set up the private product repo + a manual buyer-invite process for launch.
 - [ ] Add screenshots and/or a short demo to the landing page.
-- [ ] Set up the private product repo + a buyer-invite process (manual to start).
+
+## Manual launch fulfillment
+
+Until repo access is automated, process each paid order with this checklist:
+
+1. Confirm the Lemon Squeezy order is paid and note the buyer email, plan, and order ID.
+2. Ask the buyer for their GitHub username if it was not provided with the order.
+3. Invite the GitHub username to `SaaSling/starter` with read access.
+4. Send the repo link, quickstart link, and support contact to the buyer.
+5. Record the order ID, buyer email, GitHub username, plan, invite date, and update expiry.

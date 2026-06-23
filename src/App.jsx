@@ -33,7 +33,7 @@ const MODULES = [
 ]
 
 const STEPS = [
-  ['clone', 'Get the source via your private repo invite or a versioned release.'],
+  ['clone', 'Get the source after your private GitHub repo invite lands.'],
   ['configure', 'Run starter init — it writes .env, generates secrets, sets your brand.'],
   ['deploy', 'Click Deploy to Render; it provisions the app and the database.'],
   ['build', 'Replace the demo resource with your own feature and ship.'],
@@ -44,7 +44,7 @@ const FAQ = [
   ['Can I build commercial products with it?', "Yes. Build and sell as many of your own products as you like. You don't need to credit or disclose the starter in what you ship."],
   ['Can I resell or share the starter?', "No. You may use and modify it, but you can't resell, redistribute, or republish the starter itself."],
   ["What's the tech stack?", 'Flask 3, SQLAlchemy, Flask-Migrate, PostgreSQL (SQLite for local dev), Stripe, Resend for email, and S3/R2-compatible storage. Deploys to Render or any standard VPS.'],
-  ['How is it delivered, and how do updates work?', 'You get access to a private GitHub repo — clone it and git pull to pull updates. Improvements ship as versioned releases; each tier includes one year of updates.'],
+  ['How is it delivered, and how do updates work?', 'You get access to a private GitHub repo — during launch, invites are processed manually after purchase. Clone it and git pull to pull updates. Improvements ship as versioned releases; each tier includes one year of updates.'],
   ['Do you offer refunds?', "Because this is downloadable source code, sales are generally final — but reach out if something isn't as described."],
 ]
 
@@ -157,7 +157,7 @@ export default function App() {
               <a className="btn btn-primary" href="#pricing">get the starter</a>
               <a className="btn btn-ghost" href="docs/">read the docs</a>
             </div>
-            <CopyCmd text="git clone <your-private-repo> && cd app && starter init" />
+            <CopyCmd text="git clone git@github.com:SaaSling/starter.git && cd starter && uv run flask --app wsgi:app starter init" />
           </div>
 
           <Win title="bash — starter init" className="hero-win">
@@ -254,6 +254,10 @@ export default function App() {
               </Win>
             ))}
           </div>
+          <p className="delivery-note">
+            After purchase, reply with your GitHub username and I&apos;ll send private repo access.
+            During launch, invites are processed manually.
+          </p>
         </section>
 
         {/* faq */}
