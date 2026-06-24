@@ -1,0 +1,21 @@
+# robots.txt — saasling.dev
+# Public marketing & docs site. All content is open: being indexed by search
+# engines and cited by AI assistants is welcome free distribution.
+
+# Applies to every crawler, including the named AI crawlers below.
+User-agent: *
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: Google-Extended
+User-agent: PerplexityBot
+User-agent: CCBot
+Allow: /
+
+# Content usage preferences — https://contentsignals.org/
+# Flip any of these to "no" to opt out of that use.
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+Sitemap: https://saasling.dev/sitemap.xml
