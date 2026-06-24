@@ -231,6 +231,29 @@ export default function App() {
           </ol>
         </section>
 
+        {/* screenshots */}
+        <section id="screens" className="wrap">
+          <SectionHead
+            tag="see it"
+            title="The plumbing, already built"
+            sub="Real screens from the app you get — multi-tenant onboarding and Stripe billing, done. The dashboard ships as a clean slate for your own feature."
+          />
+          <div className="shots">
+            <figure className="shot">
+              <Win title="saasling — onboarding & plans">
+                <img src="/shots/onboarding.png" alt="Workspace onboarding with Stripe plan selection and per-tier entitlements" loading="lazy" width="1440" height="900" />
+              </Win>
+              <figcaption>Workspace onboarding with Stripe plans and per-tier entitlements.</figcaption>
+            </figure>
+            <figure className="shot">
+              <Win title="saasling — workspace">
+                <img src="/shots/workspace.png" alt="Branded multi-tenant workspace with auth, roles, and storage" loading="lazy" width="1440" height="900" />
+              </Win>
+              <figcaption>Branded, multi-tenant workspace — auth, roles, and storage included.</figcaption>
+            </figure>
+          </div>
+        </section>
+
         {/* pricing */}
         <section id="pricing" className="wrap">
           <SectionHead
