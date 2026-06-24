@@ -1,0 +1,20 @@
+# SaaSling
+
+> A production-oriented, multi-tenant Flask SaaS starter kit. Buy once, clone the private repo, run a setup wizard, deploy to Render — then build your product instead of rebuilding auth, billing, and tenancy. Python/Flask, in a market dominated by JavaScript boilerplates.
+
+SaaSling ships the foundations every SaaS needs: authentication (registration, invitations, password reset, roles), workspace-based multi-tenancy with `workspace_id` as the hard isolation boundary, Stripe billing with plan entitlements and resource limits, local or S3/R2 file storage with upload validation, white-label branding, superadmin tooling and audit events, security middleware (CSRF, rate limiting, CSP), and a tested codebase. It is delivered as access to a private GitHub repository with one year of updates, and sold via Lemon Squeezy as two one-time tiers: Personal (£129, one developer) and Team (£299, unlimited developers within one company). You may build unlimited commercial products with it, but you may not resell the starter itself.
+
+## Pages
+
+- [Home](https://saasling.dev/): Product overview, features, four-step setup flow, pricing, and FAQ.
+- [Documentation](https://saasling.dev/docs/): Docs hub (a preview — the full docs ship with the source).
+- [Quickstart](https://saasling.dev/docs/quickstart.html): Take a fresh checkout to a running local app in a few commands.
+- [Setup wizard](https://saasling.dev/docs/setup-wizard.html): Configure a fresh clone with the `starter init` command.
+
+## Details
+
+- Tech stack: Flask 3, SQLAlchemy, Flask-Migrate, PostgreSQL (SQLite for local dev), Stripe, Resend (email), and S3/R2-compatible storage. Deploys to Render or any standard VPS.
+- Tenancy model: `Workspace` is the tenant and billing boundary; every tenant query filters on `workspace_id` first. An optional `group_id` organises data within a workspace and is never the isolation boundary.
+- Delivery & updates: private GitHub repo access; pull updates with `git pull`; one year of updates included per purchase.
+- License: a simple commercial license — use and modify it to build your own commercial or non-commercial products; do not resell, redistribute, or republish the starter itself.
+- Contact: support@saasling.dev
